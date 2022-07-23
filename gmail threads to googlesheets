@@ -1,0 +1,13 @@
+
+  function getemails() {
+    var label = GmailApp.getUserLabelByName("Airbnb");
+    var threads = label.getThreads(); // ARRAY 
+       
+   for (i=0;i<threads.length;i++)
+   {
+
+      SpreadsheetApp.getActiveSpreadsheet().getRange("A"+(i+1)).setValue(threads[i].getMessages()[0].getPlainBody())
+      
+   }
+   
+      }
